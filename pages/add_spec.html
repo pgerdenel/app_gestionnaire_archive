@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Enrichir ma base de donnée</title>
+    <link href='../css/form/style.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body class="add_spec">
+
+<h1>Attention, cette espace permet d'ajouter des données d'exploitation directement dans la base.</h1>
+
+<blockquote>
+    <p>
+    Un exemple d'utilisation serait d'ajouter une nouvelle catégorie primaire d'archive, <br/>
+    Il y a déjà les types "pro" et "familiale", on voudrait rajouter le type "divers".<br/>
+    Une nouvelle données d'exploitation doit respecter 3 règles de nommage :<br/>
+    <u>Nommage</u> : <b>minuscule</b>, <b>sans accent</b> et <b>sans caractères spéciaux</b>
+    </p>
+</blockquote>
+
+<div class="master_container">
+    <div class="container_form">
+
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Ajouter un propriétaire d'archive</div>
+                <div class="form-body">
+                    <div class="row">
+                        <!--&~#&²<>§.;:?!%µ¤£$€/*+=})@ç`-{'\x22\u0022\x27\u0027[\]\(-->
+                        <input id="input_prop" type="text" maxlength="20" minlength="3" placeholder="nom de propriétaire">
+                    </div>"
+                </div>
+                <div class="separate"></div>
+                <div class="form-footer">
+                    <a id="add_prop" >Ajouter<span class="fa fa-thumbs-o-up"></span></a>
+                    <a id="del_prop" >Supprimer<span class="fa fa-thumbs-o-up"></span></a>
+                    <p id="r_prop" class="result_prop"></p>
+                </div>
+            </form>
+        </div>
+        <button id="help_prop" class="btn_aide"><i class="fas fa-info-circle fa-8x"></i></button>
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Liste des propriétaires</div>
+                <div class="form-body">
+                    <div id="result_list_prop" class="result_list_prim">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="separate"></div>
+                    &nbsp;
+                    <a id="get_prop" class="fas fa-sync fa-10px"></a>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container_form">
+
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Ajouter un type primaire</div>
+                <div class="form-body">
+                    <div class="row">
+                        <!--&~#&²<>§.;:?!%µ¤£$€/*+=})@ç`-{'\x22\u0022\x27\u0027[\]\(-->
+                        <input id="input_prim" type="text" maxlength="20" minlength="3" placeholder="nouveau type primaire">
+                    </div>"
+                </div>
+                <div class="separate"></div>
+                <div class="form-footer">
+                    <a id="add_prim" >Ajouter<span class="fa fa-thumbs-o-up"></span></a>
+                    <a id="del_prim" >Supprimer<span class="fa fa-thumbs-o-up"></span></a>
+                    <p id="r_prim" class="result_prim"></p>
+                </div>
+            </form>
+        </div>
+        <button id="help_prim" class="btn_aide"><i class="fas fa-info-circle fa-8x"></i></button>
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Liste des types primaires</div>
+                <div class="form-body">
+                    <div id="result_list_prim" class="result_list_prim">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="separate"></div>
+                    &nbsp;
+                    <a id="get_prim" class="fas fa-sync fa-10px"></a>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container_form">
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Ajouter un type secondaire</div>
+                <div class="form-body">
+                    <div class="row">
+                        <input id="input_sec" type="text" maxlength="20" minlength="3" pattern="[a-z0-9\sàèéìòù&~#&²<>§.;:?!%µ¤£$€/*+=})@ç`-{'\x22\u0022\x27\u0027[\]\(]" placeholder="nouveau type secondaire">
+                    </div>
+                </div>
+                <div class="separate"></div>
+                <div class="form-footer">
+                    <a id="add_sec">Ajouter<span class="fa fa-thumbs-o-up"></span></a>
+                    <a id="del_sec">Supprimer<span class="fa fa-thumbs-o-up"></span></a>
+                    <p id="r_sec" class="result_sec"></p>
+                </div>
+            </form>
+        </div>
+        <button id="help_sec" class="btn_aide"><i class="fas fa-info-circle fa-8x"></i></button>
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Liste des types secondaires</div>
+                <div class="form-body">
+                    <div id="result_list_sec" class="result_list_sec">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="separate"></div>
+                    &nbsp;
+                    <a id="get_sec" class="fas fa-sync fa-10px"></a>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container_form">
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Ajouter un type tertiaire</div>
+                <div class="form-body">
+                    <div class="row">
+                        <input id="input_ter" type="text" maxlength="20" minlength="3" pattern="[a-z0-9\sàèéìòù&~#&²<>§.;:?!%µ¤£$€/*+=})@ç`-{'\x22\u0022\x27\u0027[\]\(]" placeholder="nouveau type tertiaire">
+                    </div>
+                </div>
+                <div class="separate"></div>
+                <div class="form-footer">
+                    <a id="add_ter">Ajouter<span class="fa fa-thumbs-o-up"></span></a>
+                    <a id="del_ter">Supprimer<span class="fa fa-thumbs-o-up"></span></a>
+                    <p id="r_ter" class="result_ter"></p>
+                </div>
+            </form>
+        </div>
+        <button id="help_ter" class="btn_aide"><i class="fas fa-info-circle fa-8x"></i></button>
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Liste des types tertiaires</div>
+                <div class="form-body">
+                    <div id="result_list_ter" class="result_list_ter">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="separate"></div>
+                    &nbsp;
+                    <a id="get_ter" class="fas fa-sync fa-10px"></a>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container_form">
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Ajouter un type d'édifice</div>
+                <div class="form-body">
+                    <div class="row">
+                        <input id="input_edi" type="text" maxlength="20" minlength="3" pattern="[a-z0-9\sàèéìòù&~#&²<>§.;:?!%µ¤£$€/*+=})@ç`-{'\x22\u0022\x27\u0027[\]\(]" placeholder="nouveau type d'édifice">
+                    </div>
+                </div>
+                <div class="separate"></div>
+                <div class="form-footer">
+                    <a id="add_edi">Ajouter<span class="fa fa-thumbs-o-up"></span></a>
+                    <a id="del_edi">Supprimer<span class="fa fa-thumbs-o-up"></span></a>
+                    <p id="r_edi" class="result_edi"></p>
+                </div>
+            </form>
+        </div>
+        <button id="help_edi" class="btn_aide"><i class="fas fa-info-circle fa-8x"></i></button>
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Liste des noms des types d'édifice</div>
+                <div class="form-body">
+                    <div id="result_list_edi" class="result_list_edi">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="separate"></div>
+                    &nbsp;
+                    <a id="get_edi" class="fas fa-sync fa-10px"></a>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container_form">
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Ajouter un corps d'état</div>
+                <div class="form-body">
+                    <div class="row">
+                        <input id="input_ce" type="text" maxlength="20" minlength="3" pattern="[a-z0-9\sàèéìòù&~#&²<>§.;:?!%µ¤£$€/*+=})@ç`-{'\x22\u0022\x27\u0027[\]\(]" placeholder="nouveau corps d'état">
+                    </div>
+                </div>
+                <div class="separate"></div>
+                <div class="form-footer">
+                    <a id="add_ce">Ajouter<span class="fa fa-thumbs-o-up"></span></a>
+                    <a id="del_ce">Supprimer<span class="fa fa-thumbs-o-up"></span></a>
+                    <p id="r_ce" class="result_ce"></p>
+                </div>
+            </form>
+        </div>
+        <button id="help_ce" class="btn_aide"><i class="fas fa-info-circle fa-8x"></i></button>
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Liste des corps d'état</div>
+                <div class="form-body">
+                    <div id="result_list_ce" class="result_list_ce">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="separate"></div>
+                    &nbsp;
+                    <a id="get_ce" class="fas fa-sync fa-10px"></a>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container_form">
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Ajouter une entreprise</div>
+                <div class="form-body">
+                    <div class="row">
+                        <input id="input_ne" type="text" maxlength="20" minlength="3"  placeholder="nom entreprise">
+                    </div>
+                    <div class="row">
+                        <input id="input_ece" type="text" maxlength="20" minlength="3"  placeholder="corps d'état">
+                    </div>
+                </div>
+                <div class="separate"></div>
+                <div class="form-footer">
+                    <a id="add_e">Ajouter<span class="fa fa-thumbs-o-up"></span></a>
+                    <a id="del_e">Supprimer<span class="fa fa-thumbs-o-up"></span></a>
+                    <p id="r_e" class="result_ce"></p>
+                </div>
+            </form>
+        </div>
+        <button id="help_e" class="btn_aide"><i class="fas fa-info-circle fa-8x"></i></button>
+        <div class="op-form">
+            <form class="op-form-name">
+                <div class="form-title">Liste des entreprises</div>
+                <div class="form-body">
+                    <div id="result_list_e" class="result_list_ce">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="separate"></div>
+                    &nbsp;
+                    <a id="get_e" class="fas fa-sync fa-10px"></a>
+                    &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+</div>
+<script src="../scripts/js/form/scripts_add_spec.js"></script>
+</body>
+</html>

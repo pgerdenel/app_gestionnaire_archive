@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionnaire d'archives</title>
+    <!--<link rel="stylesheet" media="all"      type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />-->
+    <link rel="stylesheet" media="all"      href="libs/fontawesome-free-5.8.1-web/css/all.css" />
+    <script type="javascript" src="libs/fontawesome-free-5.8.1-web/js/all.js"></script>
+    <link rel='stylesheet' media="all"      type="text/css" href='/css/interface/font_google_api.css' />
+    <link rel="stylesheet" media="all"      type="text/css" href="css/interface/style.css" />
+    <link rel="stylesheet" media="all"      type="text/css" href="css/interface/style1.css" />
+    <link rel="stylesheet" media="screen"   type="text/css" href="css/interface/style2.css" />
+    <link rel="stylesheet" media="all"      type="text/css" href="css/interface/style3.css" />
+    <link rel="stylesheet" media="screen"   type="text/css" href="css/interface/style4.css" id="cm-theme" />
+    <link rel="stylesheet" media="all"      type="text/css" href='css/form/style_form_f1.css'>
+    <link rel="stylesheet" media="all"      type="text/css" href='css/form/style_form_f1_M2.css'>
+    <link rel="stylesheet" media="all"      type="text/css" href='css/form/style_form_f2.css'>
+    <link rel="stylesheet" media="all"      type="text/css" href='css/form/style_form_f3.css'>
+    <link rel="stylesheet" media="all"      type="text/css" href="css/interface/form_imf/mselect.css" >
+
+    <!--<link rel="stylesheet" media="all"      type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" media="all"      type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.css">
+    <link rel="stylesheet" media="all"      type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.14.2/bootstrap-table.css">
+    <link rel="stylesheet" media="all"      type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" >-->
+
+    <link rel="stylesheet" media="all" type="text/css" href="css/form/bootstrap-multiselect.css">
+    <link rel="stylesheet" media="all" type="text/css" href="css/form/bootstrap-select.css">
+    <link rel="stylesheet" media="all" type="text/css" href="css/form/bootstrap-table.css">
+    <link rel="stylesheet" media="all" type="text/css" href="libs/bootstrap_table/bootstrap-table.min.css">
+    <link rel="stylesheet" media="all" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+
+    <link rel="stylesheet" media="all" type="text/css" href="libs/jquery_database_table/jquery.dataTables.min.css" />
+
+
+</head>
+
+<body class="room-editor editor state-htmlOn-cssOn-jsOn sidebar-false preload prelayout layout-top logged-out ">
+
+<!-- All BOXE -->
+<div class="page-wrap twilight">
+
+    <!-- All BOXE CONTAINER -->
+    <div class="boxes">
+
+        <!-- All fenêtre -->
+        <div class="top-boxes editor-parent">
+
+            <!-- FENETRE 1 -->
+            <div class="editor-resizer html-editor-resizer" title="Double-click to expand."></div>
+            <div id="box-html" class="box box-html" data-type="html">
+                <div class="powers">
+                    <!-- infobulle lors du passage de la souris pour info drag -->
+                    <div class="powers-drag-handle" title="Double-click to expand."></div>
+                    <!-- container bouton paramètre et visibility gauche du titre de la fenêtre -->
+                    <div class="editor-actions-left">
+                        <!-- bouton visibility -->
+                        <button id="button_ope_vis" class="button button-medium mini-button" data-type="html" title="Cacher le contenu">
+                            <!-- icone bouton visibility droit du titre de la fenêtre -->
+                            <div id="div_ope_vis" class="fas fa-eye fa-2x">
+                                <svg id="svg_ope_vis" class="fas fa-eye fa-2x" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <!-- bouton switch mode view
+                        <button id="button_ope_switch" class="button button-medium mini-button" data-type="html" title="Changer le mode d'affichage">
+                            <div id="div_ope_switch" class="fas fa-clone">
+                                <svg id="svg_ope_switch" class="fas fa-clone" width="0" height="10"></svg>
+                            </div>
+                        </button>-->
+                        <!-- bouton validate & send to bdd -->
+                        <button id="button_ope_send" class="button button-medium mini-button" data-type="html" title="Exécuter l'opération">
+                            <div id="div_ope_send" class="fas fa-check-square fa-2x">
+                                <svg id="svg_ope_send" class="fas fa-check-square fa-2x" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <!-- Titre de la fenêtre -->
+                        <a style="margin-left:1%;color:white;">OPÉRATIONS</a>
+                        <select id="i_select_op" class="select_op" >
+                            <option value="" selected disabled hidden>Insertion</option>
+                            <option value="1">Insertion</option>
+                            <option value="2">Suppression</option>
+                            <option value="3">Modification</option>
+                        </select>
+
+                    </div>
+                    <!-- boutons resizedroit fenêtre -->
+                    <div class="editor-actions-right">
+                        <div class="collaborators-indicators"></div>
+
+                        <!-- bouton resize -->
+                        <button class="button mini-button button-medium editor-dropdown-button editor-dropdown-button-html" data-dropdown="#editor-dropdown-html" aria-haspopup="true" aria-expanded="false" title="Agrandir ou réduire la fenêtre">
+                            <span class="visually-hidden">
+                            HTML Options
+                            </span>
+                            <!-- icone bouton resize droit du titre de la fenêtre -->
+                            <div class="fas fa-grip-lines-vertical fa-1x">
+                            <svg class="fas fa-grip-lines-vertical fa-1x" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <ul id="editor-dropdown-html" class="link-list is-dropdown editor-dropdown editor-dropdown-html" data-dropdown-position="css" data-dropdown-type="html">
+                            <li class="maximize">
+                                <a href="#" id="max_F1">
+                                    Maximiser Opérations
+                                </a>
+                            </li>
+                            <li class="minimize">
+                                <a href="#" id="min_F1">
+                                    Minimiser Opérations
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="code-wrap">
+                    <div id="content_f1">
+                    <div id="content_f1_ins"></div>
+                    <div id="content_f1_supp"></div>
+                    <div id="content_f1_modif"></div>
+                    </div>
+                    <pre id="html" class="code-box"> <!-- obligatoire pour avoir le content resize --></pre>
+                </div>
+            </div>
+
+            <!-- FENETRE 2 -->
+            <div class="editor-resizer css-editor-resizer" title="Drag to resize.Double-click to expand."></div>
+            <div id="box-css" class="box box-css" data-type="css">
+                <div class="powers">
+                    <!-- infobulle lors du passage de la souris pour info drag -->
+                    <div class="powers-drag-handle" title="Drag to resize.Double-click to expand."></div>
+                    <!-- container boutons gauches du titre de la fenêtre -->
+                    <div class="editor-actions-left">
+                        <!--<button id="settings-pane-css" class="button button-medium mini-button settings-nub" data-type="css" title="Open CSS Settings">
+                             icone bouton gauche du titre de la fenêtre
+                            <div class="fas fa-cog">
+                                <svg class="fas fa-cog" width="0" height="10"></svg>
+                            </div>
+                        </button>-->
+                        <button id="button_arch_vis" class="button button-medium mini-button" data-type="html" title="Masquer le contenu">
+                            <!-- icone bouton gauche du titre de la fenêtre -->
+                            <div id="div_arch_vis" class="fas fa-eye fa-2x">
+                                <svg id="svg_arch_vis" class="fas fa-eye fa-2x" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <button id="button_pdf" class="button button-medium mini-button" data-type="html" title="Générer un pdf">
+                            <!-- icone bouton gauche du titre de la fenêtre -->
+                            <div id="div_pdf" class="fas fa-print fa-2x">
+                                <svg id="svg_pdf" class="fas fa-print fa-2x" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <!-- Titre de la fenêtre
+                        <h2 class="box-title css-editor-title"><span class="box-title-name">FENETRE_2</span></h2>-->
+                        <a style="margin-left:1%; color:white;">RECHERCHE D'ARCHVIVES</a>
+                    </div>
+                    <!-- bouton option droit fenêtre -->
+                    <div class="editor-actions-right">
+                        <div class="collaborators-indicators"></div>
+                        <button class="button mini-button button-medium editor-dropdown-button editor-dropdown-button-css" data-dropdown="#editor-dropdown-css" aria-haspopup="true" aria-expanded="false" title="Agrandir ou réduire la fenêtre">
+                        <span class="visually-hidden">
+                        CSS Options
+                        </span>
+                            <div class="fas fa-grip-lines-vertical fa-1x">
+                                <svg class="fas fa-grip-lines-vertical fa-1x" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <ul id="editor-dropdown-css" class="link-list is-dropdown editor-dropdown editor-dropdown-css" data-dropdown-position="css" data-dropdown-type="css">
+                            <li class="maximize" >
+                                <a href="#" id="max_F2">
+                                    Maximiser 'Recherche archives'
+                                </a>
+                            </li>
+                            <li class="minimize" >
+                                <a href="#" id="min_F2">
+                                    Minimiser 'Recherche archives'
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- contenu de  la fenêtre -->
+                <div class="code-wrap">
+                    <div id="content_f2">
+
+                    </div>
+                    <pre id="css" class="code-box"></pre> <!-- obligatoire pour avoir le content resize -->
+                </div>
+            </div>
+
+            <!-- FENETRE 3 -->
+            <div class="editor-resizer js-editor-resizer" title="Drag to resize.Double-click to expand."></div>
+            <div id="box-js" class="box box-js " data-type="js">
+                <div class="powers">
+                    <!-- infobulle lors du passage de la souris pour info drag -->
+                    <div class="powers-drag-handle" title="Drag to resize.Double-click to expand."></div>
+                    <!-- container boutons gauches du titre de la fenêtre -->
+                    <div class="editor-actions-left">
+                        <!--<button id="settings-pane-js" class="button button-medium mini-button settings-nub" data-type="js" title="Open JS Settings">
+                            icone bouton gauche du titre de la fenêtre
+                           <div class="fas fa-cog fa-2x">
+                               <svg class="fas fa-cog fa-2x" width="0" height="10"></svg>
+                           </div>
+                       </button>-->
+                        <button id="button_info_vis" class="button button-medium mini-button" title="Open HTML Settings">
+                            <!-- icone bouton gauche du titre de la fenêtre -->
+                            <div id="div_info_vis" class="fas fa-eye fa-2x">
+                                <svg id="svg_info_vis" class="fas fa-eye fa-2x" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <!-- Titre de la fenêtre
+                        <h2 class="box-title js-editor-title"><span class="box-title-name"></span></h2>-->
+                        <a style="margin-left:1%;color:white;">RECHERCHES D'INFORMATIONS</a>
+                    </div>
+                    <!-- bouton option droit fenêtre -->
+                    <div class="editor-actions-right">
+                        <div class="collaborators-indicators"></div>
+                        <button class="button mini-button button-medium editor-dropdown-button editor-dropdown-button-js" data-dropdown="#editor-dropdown-js" aria-haspopup="true" aria-expanded="false" title="Agrandir ou réduire la fenêtre">
+                            <span class="visually-hidden">
+                            JS Options
+                            </span>
+                            <div class="fas fa-grip-lines-vertical">
+                                <svg class="fas fa-grip-lines-vertical" width="0" height="10"></svg>
+                            </div>
+                        </button>
+                        <ul id="editor-dropdown-js" class="link-list is-dropdown editor-dropdown editor-dropdown-js" data-dropdown-position="css" data-dropdown-type="js">
+                            <li class="maximize">
+                                <a href="#" id="max_F3">
+                                    Maximiser 'Recherche d'infos'
+                                </a>
+                            </li>
+                            <li class="minimize">
+                                <a href="#" id="min_F3">
+                                    Minimiser 'Recherche d'infos'
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- contenu de  la fenêtre -->
+                <div class="code-wrap">
+                    <div id="content_f3">
+                        // TEXTE DE LA FENETRE
+                    </div>
+                    <pre id="js" class="code-box"> <!-- obligatoire pour avoir le content resize -->
+                    <!--// TEXTE DE LA FENETRE-->
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Redimensioner -->
+        <div id="resizer" class="resizer"><span></span><div id="width-readout" class="width-readout">999px</div></div>
+
+        <!-- FENETRE RESULTAT -->
+        <div class="output-container">
+            <div class="output-sizer">
+                    <div style="margin-left:1%;color:white;" id="content_console" class="result">
+                        RESULTAT DES FENÊTRES<br/>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer id="react-pen-footer" class="site-footer editor-footer">
+    <button id="button_clear_result" class="button button-medium mini-button" title="Nettoyer les résultats">
+        <!-- icone bouton gauche du titre de la fenêtre -->
+        <li id="clear_result" class="fas fa-trash-restore-alt fa-2x"></li>
+    </button>
+    <button id="button_reset_vis" class="button button-medium mini-button" title="Cacher le contenu de toutes les fenêtres">
+        <!-- icone bouton gauche du titre de la fenêtre -->
+        <li id="reset_vis" class="fas fa-eye fa-2x"></li>
+    </button>
+    <button id="button_edit_db" class="button button-medium mini-button" title="Insérer des données d'exploitation">
+        <!-- icone bouton gauche du titre de la fenêtre -->
+        <li id="edit_db" class="fas fa-edit fa-2x"></li>
+    </button>
+    <a id="btn_fen_op" style="color:dodgerblue;margin-left: 1em;" href="#">Opération</a>
+    <a id="btn_fen_ra" style="color:dodgerblue;margin-left: 1em;" href="#">Recherche d'archive</a>
+    <a id="btn_fen_ri" style="color:dodgerblue;margin-left: 1em;" href="#">Recherche d'information</a>
+</footer>
+<div id="keycommands" class="modal modal-neutral"></div>
+<div id="popup-overlay" class="overlay popup-overlay"></div>
+<div id="modal-overlay" class="overlay modal-overlay"></div>
+<div id="react-popups" class="react-popups"></div>
+
+<!-- interface needed -->
+<input type="hidden" id="init-data" value="
+{
+        &quot;__item&quot;:&quot;{\&quot;custom_screenshot\&quot;:null,\&quot;editor_settings\&quot;:{\&quot;theme\&quot;:\&quot;twilight\&quot;,\&quot;html_pre_processor\&quot;:\&quot;none\&quot;,\&quot;css_pre_processor\&quot;:\&quot;none\&quot;,\&quot;css_starter\&quot;:\&quot;neither\&quot;,\&quot;css_prefix\&quot;:\&quot;neither\&quot;,\&quot;js_pre_processor\&quot;:\&quot;none\&quot;,\&quot;font_type\&quot;:\&quot;monaco\&quot;,\&quot;font_size\&quot;:\&quot;14\&quot;,\&quot;key_bindings\&quot;:\&quot;normal\&quot;,\&quot;indent_with\&quot;:\&quot;tabs\&quot;,\&quot;tab_size\&quot;:\&quot;3\&quot;,\&quot;auto_run\&quot;:true,\&quot;line_numbers\&quot;:true,\&quot;line_wrapping\&quot;:true,\&quot;code_folding\&quot;:true,\&quot;match_brackets\&quot;:true,\&quot;autocomplete\&quot;:false,\&quot;emmet_active\&quot;:true,\&quot;snippets\&quot;:{\&quot;markupSnippets\&quot;:{},\&quot;stylesheetSnippets\&quot;:{}},\&quot;auto_save\&quot;:true},\&quot;hashid\&quot;:\&quot;d\&quot;,\&quot;itemType\&quot;:\&quot;pen\&quot;,\&quot;npm_packages\&quot;:{},\&quot;owner_id\&quot;:\&quot;c\&quot;,\&quot;resources\&quot;:[{\&quot;url\&quot;:\&quot;/css/font/interface/all.css\&quot;,\&quot;order\&quot;:0,\&quot;resource_type\&quot;:\&quot;css\&quot;,\&quot;action\&quot;:\&quot;include_css_url\&quot;,\&quot;content\&quot;:\&quot;\&quot;,\&quot;original_content\&quot;:\&quot;\&quot;,\&quot;text_to_replace\&quot;:null},{\&quot;url\&quot;:\&quot;/js/interface/3.3.1/jquery.min.js\&quot;,\&quot;order\&quot;:0,\&quot;resource_type\&quot;:\&quot;js\&quot;,\&quot;action\&quot;:\&quot;include_js_url\&quot;,\&quot;content\&quot;:\&quot;\&quot;,\&quot;original_content\&quot;:\&quot;\&quot;,\&quot;text_to_replace\&quot;:null},{\&quot;url\&quot;:\&quot;\&quot;,\&quot;order\&quot;:1,\&quot;resource_type\&quot;:\&quot;css\&quot;,\&quot;action\&quot;:\&quot;include_css_url\&quot;,\&quot;content\&quot;:\&quot;\&quot;,\&quot;original_content\&quot;:\&quot;\&quot;,\&quot;text_to_replace\&quot;:null}],\&quot;tags\&quot;:[],\&quot;id\&quot;:0,\&quot;user_id\&quot;:1,\&quot;html\&quot;:\&quot;CODE HTML\&quot;,\&quot;css\&quot;:\&quot;CODE CSS\&quot;,\&quot;parent\&quot;:0,\&quot;js\&quot;:\&quot;CODE JS\&quot;,\&quot;html_pre_processor\&quot;:\&quot;pug\&quot;,\&quot;css_pre_processor\&quot;:\&quot;scss\&quot;,\&quot;js_pre_processor\&quot;:\&quot;none\&quot;,\&quot;html_classes\&quot;:\&quot;\&quot;,\&quot;css_starter\&quot;:\&quot;normalize\&quot;,\&quot;css_prefix_free\&quot;:null,\&quot;css_external\&quot;:null,\&quot;js_library\&quot;:null,\&quot;js_modernizr\&quot;:null,\&quot;js_external\&quot;:null,\&quot;created_at\&quot;:\&quot;date\&quot;,\&quot;updated_at\&quot;:\&quot;date\&quot;,\&quot;session_hash\&quot;:\&quot;0\&quot;,\&quot;title\&quot;:\&quot;title\&quot;,\&quot;description\&quot;:\&quot;des\&quot;,\&quot;slug_hash\&quot;:\&quot;a\&quot;,\&quot;head\&quot;:\&quot;\&quot;,\&quot;private\&quot;:false,\&quot;has_animation\&quot;:false,\&quot;css_pre_processor_lib\&quot;:\&quot;\&quot;,\&quot;checksum\&quot;:0,\&quot;screenshot_uuid\&quot;:null,\&quot;team_id\&quot;:0,\&quot;css_prefix\&quot;:\&quot;neither\&quot;,\&quot;template\&quot;:false,\&quot;js_module\&quot;:null}&quot;,
+        &quot;__profiled&quot;:{
+        }
+}">
+
+<!-- import js -->
+<!----><script type="text/javascript" src="scripts/js/interface/form_imf/jquery.min.js"></script>
+
+<!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script type="javascript" src="scripts/js/form/jquery-3.4.0.min.js"></script>-->
+
+<script type="text/javascript" src="scripts/js/interface/script.js"></script>
+<script type="text/javascript" src="scripts/js/interface/s2_everypage.js"></script>
+<script type="text/javascript" src="scripts/js/interface/s7_commonLibs.js"></script>
+<script type="text/javascript" src="scripts/js/interface/s8_codemirror.js"></script>
+<script type="text/javascript" src="scripts/js/interface/s10_index.js"></script>
+<script type="text/javascript" src="scripts/js/support.js"></script>
+
+<!--<script type="text/javascript" src="https://unpkg.com/popper.js@1.15.0/dist/umd/popper.min.js"></script>-->
+<script src="scripts/js/form/popper.min.js"></script>
+
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script-->>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+<script src="scripts/js/form/bootstrap.min.js"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>-->
+<script src="scripts/js/form/bootstrap-multiselect.js"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.14.2/bootstrap-table.js"></script>-->
+<script src="scripts/js/form/bootstrap-table.js"></script>
+<script type="javascript" src="libs/bootstrap_table/bootstrap-table.min.js"></script>
+<!--<script src="https://rawgit.com/wenzhixin/colResizable/master/source/colResizable-1.5.source.js"></script>-->
+<script type="javascript" src="scripts/js/form/colResizable-1.5.source.js"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>-->
+<!--<script src="libs/html2canvas.js"></script>-->
+<script src="scripts/js/form/jspdf.min.js"></script>
+
+<script src="libs/jquery_database_table/jquery.dataTables.min.js"></script>
+</body>
