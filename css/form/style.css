@@ -1,0 +1,230 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+/* générale */
+.add_spec {
+    text-align: center;
+}
+/* Formulaires */
+.master_container {
+    /*border-style: solid;
+    border-color: green;*/
+}
+.container_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    letter-spacing: 1px;
+}
+.container_form .op-form {
+    width: 500px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+.container_form .form-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    background: dodgerblue;
+    border-radius: 10px 10px 0 0;
+}
+.container_form .form-body {
+    padding: 10px;
+}
+.container_form .row {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.container_form .rowe { !important;
+    display: flex;
+    padding: 10px;
+    text-align: left;
+    margin-left: 1em;
+}
+.container_form input[type="text"]{
+    width: 100%;
+    margin: 0 15px;
+    height: 35px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #e8ebed;
+    color: #576366;
+    font-size: 14px;
+}
+.container_form .separate{
+    height: 2px;
+    background: #e8ebed;
+    margin: 0 35px;
+}
+.container_form .form-footer {
+    margin: 0 25px 15px 25px;
+    padding: 15px 10px;
+
+}
+.container_form a{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background: dodgerblue;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.container_form span{
+    margin-left: 8px;
+}
+/* Texte d'information entre guillemet */
+blockquote {
+    color: rgb(255, 27, 35);
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    margin:3%;
+    text-align: center;
+}
+blockquote h1 {
+    font-size: 4rem;
+}
+blockquote p {
+    font-style: italic;
+    margin-bottom: 0;
+}
+blockquote p::before,
+blockquote p::after {
+    content: "“";
+    font-family: Georgia, serif;
+    font-size: 8rem;
+    margin: -2rem 0 0 -4rem;
+    position: absolute;
+    opacity: 0.5;
+}
+blockquote p::after {
+    content: "”";
+    margin: -1rem -4rem 0 0;
+}
+blockquote cite {
+    font-size: 1.5rem;
+}
+/* Divider de séparation */
+hr {
+    background-color: black;
+    min-width: 50%;
+    max-width: 50%;
+    height: 3px;
+    border: none;
+    justify-content: center;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+hr:before {
+     font-family: cursive;
+     content: '༺༻';
+     color: black;
+     display: block;
+     width: 20%;
+     padding: 0.3em;
+     font-size: 4em;
+     text-align: center;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+/* IMG information */
+.btn_aide {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+i:before {
+    color:dodgerblue;
+    background: #ffc0c0;
+    border-radius: 100%;
+}
+/* IMG refresh */
+.fa-sync {
+    margin-top: 10px;
+    margin-left:10px;
+}
+/* div résultat des requêtes */
+.result_prop {
+    color:red;
+}
+.result_prim {
+    color:red;
+}
+.result_sec {
+    color:red;
+}
+.result_ter {
+    color:red;
+}
+.result_edi {
+    color:red;
+}
+.result_ce {
+    color:red;
+}
+.result_list_prop {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 10%;
+    color:black;
+}
+.result_list_prop li{
+    margin-bottom: 5px;
+}
+.result_list_prim {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 10%;
+    color:black;
+}
+.result_list_prim li{
+    margin-bottom: 5px;
+}
+.result_list_sec {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 10%;
+    color:black;
+}
+.result_list_sec li{
+    margin-bottom: 5px;
+}
+.result_list_ter {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 10%;
+    color:black;
+}
+.result_list_ter li{
+    margin-bottom: 5px;
+}
+.result_list_edi {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 10%;
+    color:black;
+}
+.result_list_edi li{
+    margin-bottom: 5px;
+}
+.result_list_ce {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 10%;
+    color:black;
+}
+.result_list_ce li{
+    margin-bottom: 5px;
+}

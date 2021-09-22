@@ -1,0 +1,170 @@
+/** Général **/
+
+.my_tilte_box  {!important;
+    margin-left:50%;
+    font-size: 0.2em;
+}
+.editor-actions-left {
+    overflow:hidden;
+    display: block;
+    /*border-style: solid;
+    border-color: green;*/
+    /*background-color: white;*/
+}
+.editor-actions-right {
+    display: inline-block;
+    /*border-style: solid;
+    border-color: blue;*/
+}
+.code-wrap { !important;
+    /*background-color: white;*/
+}
+.CodeMirror {
+    height:0;
+    width:0;
+    visibility: hidden;
+}
+
+/** All fenêtre **/
+#content_f1_ins {
+    /*border-style: solid;
+    border-color: yellow;*/
+    overflow: hidden;
+    color:white;
+}
+#content_f1_supp {
+    /*border-style: solid;
+    border-color: yellow;*/
+    overflow: hidden;
+    color:white;
+}
+#content_f1_modif {
+    /*border-style: solid;
+    border-color: yellow;*/
+    overflow: hidden;
+    color:white;
+}
+.select_op {
+    margin-left:1%;
+}
+/* Custom Select */
+.select_op {
+    width: 20em;
+    line-height: 3;
+    background: white;
+    overflow: hidden;
+    border-radius: .25em;
+}
+select {
+    margin: 0;
+    padding: 0 0 0 .5em;
+    color: Black;
+    cursor: pointer;
+}
+select::-ms-expand {
+    display: none;
+}
+/* Arrow */
+.select_op::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: dodgerblue;
+    pointer-events: none;
+}
+/* Transition */
+.select_op:hover::after {
+    color: #f39c12;
+}
+.select_op::after {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+
+
+#step1 .form-body {
+    overflow-y: visible;
+}
+#i_btn_ter_refresh {
+    margin-left:0.5em;
+    color:black;
+}
+.label_point {
+    display: list-item;
+    list-style-type: disc;
+}
+.container_mselect_ter {
+    display: list-item;
+    list-style-type: disc;
+}
+.data_picker {
+    /*border:solid blue;*/
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 1.3em;
+    width: 100%;
+}
+#m_select_type_ter { !important;
+    display: inline-block;
+}
+.multiselect-native-select { !important;
+    display: inline-block;
+    /*border: solid green;*/
+}
+.label_point_ter {
+    display: inline-block;
+    margin-right: 2.5em;
+}
+.label_year {
+    margin-left: 0.5em;
+}
+.label_year_unknow {
+    margin-left:1em;
+}
+
+#year_inconnu {
+    margin-left: 0.5em;
+}
+.inputs_year {
+    /*border:solid yellow;*/
+    display: inline-block;
+    margin-left: 30%;
+}
+
+.carac_arch {
+    margin-top:-1em;
+    margin-bottom:1em;
+    margin-left: 0.55em;
+    display: list-item;
+    list-style-type: disc;
+}
+
+#content_f2 {
+    color:white;
+    overflow-y:scroll;
+    position:relative;
+    height: 100%;
+}
+#content_f3 {
+    /*border-style: solid;
+    border-color: yellow;*/
+    overflow: hidden;
+    color:white;
+}
+#content_console {
+    overflow-y: scroll;
+}
+.site-footer button {
+    margin-left: 1%;
+    margin-right : 1%;
+}
+.result {
+    /*border-style: solid;
+    border-color: yellow;*/
+    padding: 1.5%;
+}
+
